@@ -14,7 +14,7 @@ export const profile = {
   phoneDisplay: '+31 6 87 14 73 19',
   cvPdf: null as string | null,
   // Persoonlijke introductie en motivatie: nog aan te leveren door Beatrice.
-  about: null as string | null,
+  about: 'Beatrice is een doorzetter en een harde werker. Ze stelt zichzelf duidelijke doelen en werkt daar met volle inzet naartoe. Daarbij denkt ze niet alleen aan zichzelf: ze wil ook haar patiënten, cliënten en collega’s helpen groeien en naar een hoger niveau tillen.' as string | null,
   motivation: null as string | null,
 }
 
