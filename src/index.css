@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    color-scheme: light;
+  }
+  body {
+    @apply bg-paper font-sans font-light text-ink antialiased;
+    overflow-x: hidden;
+    background-image: linear-gradient(180deg, #f4f9ff 0%, #e6f2fd 22%, #f3eeff 48%, #e8f4fe 72%, #fff3ec 100%);
+  }
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  section[id] {
+    scroll-margin-top: 4.5rem;
+  }
+  :focus-visible {
+    outline: 2px solid theme('colors.azure.deep');
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  ::selection {
+    background: theme('colors.azure.light');
+    color: theme('colors.ink.DEFAULT');
+  }
+}
+
+@layer components {
+  .gutter {
+    padding-left: max(1.25rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1.25rem, env(safe-area-inset-right, 0px));
+  }
+  @media (min-width: 768px) {
+    .gutter {
+      padding-left: max(2.5rem, env(safe-area-inset-left, 0px));
+      padding-right: max(2.5rem, env(safe-area-inset-right, 0px));
+    }
+  }
+  /* Grote, dunne kapitalen zoals in het voorbeeldontwerp; links vervaagd. */
+  .display {
+    @apply font-extralight uppercase leading-[0.9] tracking-[-0.02em];
+  }
+  .fade-text {
+    background: linear-gradient(90deg, #5aa9e6 0%, #2f7fc1 30%, #14284b 70%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .label {
+    @apply text-[0.7rem] font-normal uppercase tracking-[0.2em] text-muted;
+  }
+  .placeholder {
+    @apply rounded-2xl border border-dashed border-azure/60 bg-raised/60 text-ink-soft;
+  }
+  .photo {
+    @apply transition-transform duration-700 ease-out;
+  }
+  .grain {
+    background-image: radial-gradient(rgba(47, 127, 193, 0.12) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
