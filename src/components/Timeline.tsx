@@ -160,15 +160,7 @@ function TimelineCard({ item, index }: { item: Item; index: number }) {
                   </div>
                 )}
 
-                {exp &&
-                  (exp.description ? (
-                    <p className="leading-relaxed text-ink-soft">{exp.description}</p>
-                  ) : (
-                    <p className="placeholder px-4 py-3">
-                      <strong className="font-normal text-ink">Placeholder:</strong> beschrijving van taken en
-                      verantwoordelijkheden volgt.
-                    </p>
-                  ))}
+                {exp?.description && <p className="leading-relaxed text-ink-soft">{exp.description}</p>}
               </div>
             </motion.div>
           )}

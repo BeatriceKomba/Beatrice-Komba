@@ -57,9 +57,6 @@
   .label {
     @apply text-[0.7rem] font-normal uppercase tracking-[0.2em] text-muted;
   }
-  .placeholder {
-    @apply rounded-2xl border border-dashed border-azure/60 bg-raised/60 text-ink-soft;
-  }
   .photo {
     @apply transition-transform duration-700 ease-out;
   }

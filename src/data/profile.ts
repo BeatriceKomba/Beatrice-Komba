@@ -1,5 +1,5 @@
 // Alle gegevens komen uit het LinkedIn-profiel van Beatrice (screenshots, oktober 2026).
-// Velden met `null` zijn nog niet bekend en tonen een zichtbare placeholder op de site.
+// Velden met `null` zijn nog niet bekend; zodra je ze invult, verschijnen ze vanzelf op de site.
 
 export const profile = {
   name: 'Beatrice Komba',

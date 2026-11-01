@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { HeartPulse, PenLine, Users } from 'lucide-react'
+import { HeartPulse, Users } from 'lucide-react'
 import blouse from '../assets/beatrice-blouse.webp'
 import { experiences, profile } from '../data/profile'
 import { Reveal, SectionHeading, staggerChild, staggerParent } from './Reveal'
@@ -74,20 +74,9 @@ export default function About() {
           </div>
 
           <div className="min-w-0 space-y-6">
-            {profile.about ? (
+            {profile.about && (
               <Reveal>
                 <p className="text-2xl font-light leading-relaxed">{profile.about}</p>
-              </Reveal>
-            ) : (
-              <Reveal className="placeholder p-6 md:p-8">
-                <p className="label flex items-center gap-2 text-azure">
-                  <PenLine className="h-4 w-4" aria-hidden="true" /> Placeholder
-                </p>
-                <p className="mt-3 text-xl font-light leading-relaxed text-ink md:text-2xl">
-                  Hier komt de persoonlijke introductie van Beatrice: wie ze is, wat haar drijft in het sociaal werk en waarom
-                  ze graag met mensen werkt.
-                </p>
-                <p className="mt-3 text-sm">Nog aan te leveren door Beatrice zelf, zodat de tekst echt van haar is.</p>
               </Reveal>
             )}
 
@@ -119,10 +108,9 @@ export default function About() {
               ))}
             </div>
 
-            {!profile.motivation && (
-              <Reveal className="placeholder px-6 py-4 text-sm">
-                <strong className="font-normal text-ink">Placeholder:</strong> motivatie voor sociaal werk en persoonlijke
-                ontwikkeling, in de woorden van Beatrice.
+            {profile.motivation && (
+              <Reveal>
+                <p className="leading-relaxed text-ink-soft">{profile.motivation}</p>
               </Reveal>
             )}
           </div>
