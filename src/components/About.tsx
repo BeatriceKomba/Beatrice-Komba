@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { HeartPulse, Users } from 'lucide-react'
+import { HeartPulse, Quote, Users } from 'lucide-react'
 import blouse from '../assets/beatrice-blouse.webp'
 import { experiences, profile } from '../data/profile'
 import { Reveal, SectionHeading, staggerChild, staggerParent } from './Reveal'
@@ -74,11 +74,6 @@ export default function About() {
           </div>
 
           <div className="min-w-0 space-y-6">
-            {profile.about && (
-              <Reveal>
-                <p className="text-2xl font-light leading-relaxed">{profile.about}</p>
-              </Reveal>
-            )}
 
             <div className="relative grid gap-5 sm:grid-cols-2">
               <svg aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/2 z-10 hidden h-10 w-16 -translate-x-1/2 -translate-y-1/2 sm:block" viewBox="0 0 64 40" fill="none">
@@ -107,6 +102,17 @@ export default function About() {
                 </Reveal>
               ))}
             </div>
+
+            {profile.about && (
+              <Reveal>
+                <figure className="relative overflow-hidden rounded-3xl bg-ink p-8 text-paper shadow-lift md:p-10">
+                  <Quote className="h-8 w-8 text-azure-light" aria-hidden="true" />
+                  <blockquote className="mt-5 text-xl font-light leading-relaxed md:text-2xl">{profile.about}</blockquote>
+                  <figcaption className="label mt-6 text-paper/60">Wie is Beatrice</figcaption>
+                  <div aria-hidden="true" className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-azure/30 blur-3xl" />
+                </figure>
+              </Reveal>
+            )}
 
             {profile.motivation && (
               <Reveal>
